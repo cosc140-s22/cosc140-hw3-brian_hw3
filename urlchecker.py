@@ -5,12 +5,32 @@
 #######################################################
 
 def urlchecker(url):
-
-    # your code should go here
-
-    return True
-
-
+  if url.count(" ")>0:
+    return False
+  if url.count("#")>0 and url.count("?")>0:
+    if url.find("#") > url.find("?"):
+      return False
+  if url.count("#")>1 or url.count("?")>1:
+    return False
+  before, after = url.split("://")
+  if before != "http" and before != "https":
+    return False
+  if after.count(":")>1:
+    return False
+  if after.count(":")==1:
+    if after.find(":")==0:
+      return False
+    hostname, rest = after.split(":")
+    if rest.count("/")==0:
+      return False
+    portid, rest = rest.split("/")
+    return portid.isdigit()
+  if after.count("/")==0:
+    return False
+  if after.find("/")==0:
+    return False
+  return True
+#print(urlchecker('https://example/?:3000#'))
 def testurl():
     urls = [ # valid
       ['https://example.com/', True],
