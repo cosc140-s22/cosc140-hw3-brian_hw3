@@ -8,5 +8,9 @@
 
 ## Feedback
 
-Once you commit and submit your work to Github, I'll update this section with feedback.
+S
+
+Well done -- everything works well.
+
+One thing in terms of structure that could be improved in ghost is to just use a variable to hold the current player number.  That way, you could reduce a lot of the near-duplicated code in the main loop since the main difference is just which player is currently playing.
 

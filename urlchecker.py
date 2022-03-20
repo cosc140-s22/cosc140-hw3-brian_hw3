@@ -57,4 +57,3 @@ def testurl():
             print(f"{url} is not valid, but your function claimed the opposite")
         else:
             print(f"{url} - ok")
-
